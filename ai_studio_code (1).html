@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dress Circle | Bespoke Sherwanis & Groom Couture · Est. 1994, Kolkata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #FAF7F2;
+      --alabaster: #F2ECE1;
+      --sand: #E5DCCB;
+      --charcoal: #1A1816;
+      --muted: #5C554E;
+      --gold: #B5924C;
+      --gold-light: #D4B77A;
+      --maroon: #4A181C;
+      --emerald: #193229;
+      --white: #FFFFFF;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background-color: var(--ivory);
+      color: var(--charcoal);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .serif { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; }
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-block;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.85rem;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+    .btn-primary { background: var(--charcoal); color: var(--ivory); border-color: var(--charcoal); }
+    .btn-primary:hover { background: var(--maroon); border-color: var(--maroon); transform: translateY(-2px); }
+    .btn-gold { background: var(--gold); color: var(--white); border-color: var(--gold); }
+    .btn-gold:hover { background: #9E7C3B; transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--charcoal); border-color: rgba(26, 24, 22, 0.35); }
+    .btn-outline:hover { border-color: var(--charcoal); background: rgba(26, 24, 22, 0.05); }
+    .btn-outline-light { background: transparent; color: var(--ivory); border-color: rgba(250, 247, 242, 0.45); }
+    .btn-outline-light:hover { background: var(--ivory); color: var(--charcoal); }
+
+    .container { width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 5%; }
+
+    /* Topbar */
+    .topbar {
+      background: var(--charcoal);
+      color: var(--sand);
+      text-align: center;
+      padding: 0.55rem 1rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(181, 146, 76, 0.25);
+    }
+    .topbar span { color: var(--gold-light); }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(181, 146, 76, 0.18);
+    }
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--charcoal);
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: var(--transition);
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    .brand-logo { text-align: center; text-decoration: none; color: var(--charcoal); display: flex; flex-direction: column; align-items: center; }
+    .brand-logo .monogram { font-family: var(--serif); font-size: 1.7rem; font-weight: 600; letter-spacing: 0.22em; line-height: 1; text-transform: uppercase; }
+    .brand-logo .sub { font-size: 0.56rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
+    .nav-actions { display: flex; align-items: center; gap: 1.2rem; }
+    .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--charcoal); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #1E1916 0%, #2E1D1B 55%, #151210 100%);
+      color: var(--ivory);
+      overflow: hidden;
+      padding: 4.5rem 0;
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background-image: radial-gradient(var(--gold) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 { font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: 1.06; margin: 1rem 0 1.4rem; color: var(--ivory); }
+    .hero h1 em { font-style: italic; color: var(--gold-light); font-weight: 400; }
+    .hero p { font-size: 1.02rem; color: rgba(250, 247, 242, 0.8); max-width: 520px; margin-bottom: 2.2rem; font-weight: 300; }
+    .hero-cta-group { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+    .hero-showcase {
+      position: relative;
+      border: 1px solid rgba(181, 146, 76, 0.4);
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .hero-showcase-inner {
+      aspect-ratio: 4 / 5;
+      position: relative;
+      overflow: hidden;
+      background: #241916;
+    }
+    .hero-showcase-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .showcase-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(20,16,14,0.92), transparent);
+      padding: 2.5rem 1.4rem 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sand);
+    }
+    .heritage-seal {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      z-index: 5;
+      width: 92px;
+      height: 92px;
+      background: var(--gold);
+      color: var(--charcoal);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      border: 2px solid var(--ivory);
+      transform: rotate(8deg);
+    }
+    .heritage-seal span:first-child { font-size: 1.35rem; line-height: 1; }
+    .heritage-seal span:last-child { font-family: var(--sans); font-size: 0.54rem; letter-spacing: 0.14em; text-transform: uppercase; }
+
+    /* Trust Strip */
+    .trust-strip { background: var(--alabaster); border-bottom: 1px solid var(--sand); padding: 2.2rem 0; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center; }
+    .trust-item h3 { font-size: 2rem; color: var(--maroon); line-height: 1.1; }
+    .trust-item p { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; }
+
+    /* Section Headers */
+    .section { padding: 5.5rem 0; }
+    .section-header { text-align: center; max-width: 700px; margin: 0 auto 3.2rem; }
+    .section-header h2 { font-size: clamp(2.1rem, 3.5vw, 3.1rem); margin: 0.5rem 0 0.9rem; color: var(--charcoal); }
+    .section-header p { color: var(--muted); font-size: 0.96rem; font-weight: 300; }
+
+    /* Collection Filters & Price Sorting */
+    .collection-section { background: var(--alabaster); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid var(--sand);
+    }
+    .filter-tabs { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+    .filter-btn {
+      background: var(--ivory);
+      border: 1px solid rgba(26, 24, 22, 0.18);
+      padding: 0.58rem 1.15rem;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--charcoal);
+      transition: var(--transition);
+    }
+    .filter-btn.active, .filter-btn:hover { background: var(--charcoal); color: var(--ivory); border-color: var(--charcoal); }
+
+    .sort-controls { display: flex; align-items: center; gap: 0.8rem; }
+    .sort-label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .sort-select {
+      padding: 0.6rem 1.1rem;
+      border: 1px solid rgba(26, 24, 22, 0.25);
+      background: var(--ivory);
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--charcoal);
+      cursor: pointer;
+      outline: none;
+    }
+    .results-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Product Cards */
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .product-card {
+      background: var(--ivory);
+      border: 1px solid var(--sand);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover { box-shadow: 0 18px 36px rgba(26, 24, 22, 0.09); border-color: var(--gold); }
+    .product-visual {
+      aspect-ratio: 4 / 5;
+      position: relative;
+      overflow: hidden;
+      background: #E8E0D2;
+    }
+    .product-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+    .product-card:hover .product-visual img { transform: scale(1.05); }
+
+    .badge-tag {
+      position: absolute;
+      top: 0.9rem;
+      left: 0.9rem;
+      background: rgba(250, 247, 242, 0.94);
+      color: var(--charcoal);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.68rem;
+      border: 1px solid var(--sand);
+      z-index: 2;
+    }
+    .badge-customizable {
+      position: absolute;
+      top: 0.9rem;
+      right: 0.9rem;
+      background: var(--maroon);
+      color: var(--ivory);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.32rem 0.62rem;
+      z-index: 2;
+    }
+    .quick-view-overlay {
+      position: absolute;
+      bottom: 0.9rem;
+      left: 0.9rem;
+      right: 0.9rem;
+      display: flex;
+      gap: 0.5rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: var(--transition);
+      z-index: 3;
+    }
+    .product-card:hover .quick-view-overlay { opacity: 1; transform: translateY(0); }
+
+    .product-info { padding: 1.35rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .product-cat { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .product-title { font-size: 1.38rem; margin: 0.3rem 0; color: var(--charcoal); }
+    .product-fabric { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .product-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--sand);
+      padding-top: 0.85rem;
+    }
+    .product-price { font-weight: 600; font-size: 1rem; color: var(--charcoal); }
+    .product-action-link {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--maroon);
+      font-weight: 600;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* Pant-Project Style Bespoke Customizer */
+    .customizer-section { background: var(--white); border-bottom: 1px solid var(--sand); }
+    .customizer-shell {
+      display: grid;
+      grid-template-columns: 0.95fr 1.25fr;
+      border: 1px solid var(--sand);
+      background: var(--ivory);
+    }
+    .customizer-preview {
+      background: linear-gradient(160deg, #1E1A17 0%, #2E211E 100%);
+      color: var(--ivory);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      border-right: 1px solid var(--sand);
+    }
+    .preview-stage {
+      text-align: center;
+      padding: 1.5rem 0;
+      position: relative;
+    }
+    .preview-stage svg {
+      width: 56%;
+      max-width: 210px;
+      height: auto;
+      filter: drop-shadow(0 18px 30px rgba(0,0,0,0.45));
+      transition: var(--transition);
+    }
+    .monogram-tag-preview {
+      margin: 1rem auto 0;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px dashed rgba(212, 183, 122, 0.55);
+      background: rgba(255,255,255,0.04);
+      padding: 0.65rem 1.4rem;
+    }
+    .monogram-tag-preview small {
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(250,247,242,0.6);
+    }
+    .monogram-letters {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-style: italic;
+      letter-spacing: 0.14em;
+      color: var(--gold-light);
+      margin-top: 2px;
+    }
+    .preview-summary-box {
+      border-top: 1px solid rgba(181, 146, 76, 0.3);
+      padding-top: 1.2rem;
+      font-size: 0.82rem;
+    }
+    .summary-line { display: flex; justify-content: space-between; margin-bottom: 0.45rem; color: rgba(250,247,242,0.8); }
+    .summary-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 0.9rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(181, 146, 76, 0.3);
+    }
+    .summary-total span:last-child { font-family: var(--serif); font-size: 2rem; color: var(--gold-light); font-weight: 600; }
+
+    .customizer-controls { padding: 2.5rem; display: grid; gap: 1.8rem; }
+    .cust-step-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--maroon);
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .cust-step-title span { color: var(--gold); font-weight: 500; }
+
+    .swatch-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .swatch-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 0.9rem;
+      border: 1px solid var(--sand);
+      background: var(--white);
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--charcoal);
+      transition: var(--transition);
+    }
+    .swatch-btn.active { border-color: var(--charcoal); background: var(--alabaster); box-shadow: inset 0 0 0 1px var(--charcoal); }
+    .swatch-dot { width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.2); }
+
+    .option-pills { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 0.6rem; }
+    .opt-pill {
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--sand);
+      background: var(--white);
+      text-align: left;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .opt-pill strong { display: block; font-size: 0.78rem; color: var(--charcoal); font-weight: 600; }
+    .opt-pill small { font-size: 0.68rem; color: var(--muted); }
+    .opt-pill.active { border-color: var(--maroon); background: #F7EFEF; }
+
+    .monogram-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .cust-input, .cust-select {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid var(--sand);
+      background: var(--white);
+      font-family: var(--sans);
+      font-size: 0.86rem;
+      outline: none;
+    }
+    .cust-input:focus, .cust-select:focus { border-color: var(--gold); }
+
+    .measure-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; margin-top: 0.75rem; }
+    .measure-box label { display: block; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.25rem; }
+
+    /* Heritage & Appointment */
+    .heritage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .heritage-frame { background: var(--charcoal); color: var(--ivory); padding: 3.2rem; position: relative; border: 1px solid var(--gold); }
+    .heritage-quote { font-family: var(--serif); font-size: 2rem; line-height: 1.3; font-style: italic; color: var(--gold-light); margin-bottom: 1.5rem; }
+    .pillar-list { margin-top: 1.5rem; display: grid; gap: 1.2rem; }
+    .pillar-item { display: flex; gap: 1.1rem; border-bottom: 1px solid var(--sand); padding-bottom: 1rem; }
+    .pillar-num { font-family: var(--serif); font-size: 1.7rem; color: var(--gold); line-height: 1; }
+
+    .visit-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; background: var(--white); border: 1px solid var(--sand); padding: 3rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .form-group input, .form-group select { padding: 0.8rem 0.9rem; border: 1px solid var(--sand); background: var(--ivory); font-family: var(--sans); font-size: 0.88rem; }
+
+    .store-card { background: var(--alabaster); padding: 2.2rem; border: 1px solid var(--sand); display: flex; flex-direction: column; justify-content: space-between; }
+    .store-detail-block { margin-bottom: 1.2rem; }
+    .store-detail-block h5 { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.25rem; }
+
+    /* Footer */
+    footer { background: #131110; color: rgba(250, 247, 242, 0.72); padding: 4rem 0 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-brand { font-family: var(--serif); font-size: 1.75rem; color: var(--ivory); letter-spacing: 0.18em; text-transform: uppercase; }
+    .footer-col h5 { color: var(--gold-light); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: grid; gap: 0.55rem; }
+    .footer-col a { color: rgba(250, 247, 242, 0.7); text-decoration: none; font-size: 0.84rem; }
+    .footer-bottom { display: flex; justify-content: space-between; padding-top: 1.5rem; font-size: 0.76rem; color: rgba(250, 247, 242, 0.45); }
+
+    /* Modal */
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(19, 17, 16, 0.8); backdrop-filter: blur(6px); z-index: 999; display: none; align-items: center; justify-content: center; padding: 1.5rem; }
+    .modal-backdrop.open { display: flex; }
+    .modal-box { background: var(--ivory); max-width: 860px; width: 100%; display: grid; grid-template-columns: 1fr 1.1fr; border: 1px solid var(--gold); position: relative; max-height: 90vh; overflow-y: auto; }
+    .modal-close { position: absolute; top: 0.8rem; right: 1.1rem; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--charcoal); z-index: 5; }
+    .modal-visual { background: #E8E0D2; min-height: 360px; overflow: hidden; }
+    .modal-visual img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .modal-body { padding: 2.4rem; display: flex; flex-direction: column; justify-content: center; }
+    .modal-specs { margin: 1.2rem 0; padding: 0.9rem 0; border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); font-size: 0.84rem; display: grid; gap: 0.45rem; }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--emerald);
+      color: var(--ivory);
+      padding: 1rem 1.5rem;
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+      z-index: 1200;
+      font-size: 0.85rem;
+      display: none;
+      max-width: 420px;
+    }
+    .toast.show { display: block; animation: fadeUp 0.3s ease; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-grid, .customizer-shell, .heritage-grid, .visit-grid { grid-template-columns: 1fr; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-actions .btn { display: none; }
+      .mobile-toggle { display: block; }
+      .trust-grid, .measure-grid { grid-template-columns: repeat(2, 1fr); }
+      .product-grid, .form-grid, .footer-grid, .modal-box, .monogram-inputs { grid-template-columns: 1fr; }
+      .visit-grid { padding: 1.5rem; }
+      .customizer-controls, .customizer-preview { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    Est. 1994 · <span>Grant Street, New Market, Kolkata</span> · Sherwanis Starting ₹3,500 · Free Bespoke Monogramming
+  </div>
+
+  <header>
+    <div class="container nav-wrap">
+      <ul class="nav-links">
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#customizer">Customize</a></li>
+        <li><a href="#heritage">Legacy</a></li>
+      </ul>
+
+      <a href="#" class="brand-logo">
+        <span class="monogram">Dress Circle</span>
+        <span class="sub">Kolkata · Est. 1994</span>
+      </a>
+
+      <div class="nav-actions">
+        <ul class="nav-links">
+          <li><a href="#collection" onclick="filterProducts('accessories')">Accessories</a></li>
+          <li><a href="#visit">Visit Store</a></li>
+        </ul>
+        <a href="#customizer" class="btn btn-primary" style="padding: 0.7rem 1.3rem;">Custom Studio</a>
+        <button class="mobile-toggle" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Three Decades of Groom Couture</span>
+        <h1>Dressing Kolkata’s Grooms <em>Since 1994.</em></h1>
+        <p>
+          From classic ₹3,500 ceremonial sherwanis to ₹45,000 hand-embroidered zardozi heirlooms—paired with custom safas, mojaris, vest jackets, and tailored perfection in the heart of New Market.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#collection" class="btn btn-gold">Explore Collection</a>
+          <a href="#customizer" class="btn btn-outline-light">Customize Your Outfit</a>
+        </div>
+      </div>
+
+      <div class="hero-showcase">
+        <div class="heritage-seal">
+          <span>30+</span>
+          <span>Years</span>
+        </div>
+        <div class="hero-showcase-inner">
+          <img
+            src="https://images.unsplash.com/photo-1757598079169-b8655dc3e933?auto=format&fit=crop&w=900&q=80"
+            alt="Royal Groom Sherwani"
+            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 500%22><rect width=%22400%22 height=%22500%22 fill=%22%232E1D1B%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23D4B77A%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2222%22>DRESS CIRCLE</text></svg>'"
+          />
+          <div class="showcase-caption">
+            <span>The Nawab Ivory & Crimson Ensemble</span>
+            <span style="color: var(--gold-light);">₹3,500 – ₹45,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <section class="trust-strip">
+    <div class="container trust-grid">
+      <div class="trust-item"><h3>₹3,500+</h3><p>Sherwanis For Every Budget</p></div>
+      <div class="trust-item"><h3>30+ Yrs</h3><p>New Market Heritage</p></div>
+      <div class="trust-item"><h3>100%</h3><p>Custom Fit & Monogram</p></div>
+      <div class="trust-item"><h3>Complete</h3><p>Safas, Mojaris & Malas</p></div>
+    </div>
+  </section>
+
+  <!-- Catalogue with Category Filter & Price Sorting -->
+  <section class="section collection-section" id="collection">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Complete Groom Trousseau</span>
+        <h2>Explore Our Collection</h2>
+        <p>Filter by category or sort by price—from everyday festive kurtas and mojaris to heirloom ₹45,000 wedding sherwanis.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+          <button class="filter-btn" onclick="filterProducts('sherwani', this)">Sherwanis</button>
+          <button class="filter-btn" onclick="filterProducts('vest', this)">Vest Jackets</button>
+          <button class="filter-btn" onclick="filterProducts('kurta', this)">Kurtas</button>
+          <button class="filter-btn" onclick="filterProducts('safa', this)">Safas</button>
+          <button class="filter-btn" onclick="filterProducts('mojari', this)">Mojaris</button>
+          <button class="filter-btn" onclick="filterProducts('accessories', this)">Accessories</button>
+        </div>
+
+        <div class="sort-controls">
+          <span class="sort-label">Sort By:</span>
+          <select class="sort-select" id="priceSort" onchange="applySort()">
+            <option value="featured">Curated Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="results-meta">
+        <span id="resultsCount">Showing all creations</span>
+        <span>All Sherwanis & Vest Jackets include complimentary alterations</span>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- The Pant Project Style Bespoke Customizer -->
+  <section class="section customizer-section" id="customizer">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Bespoke E-Tailoring Studio</span>
+        <h2>Customize Your Sherwani or Jacket</h2>
+        <p>Inspired by modern custom-tailoring: pick your fabric tier, collar cut, buttons, complimentary monogram initials, and exact measurements.</p>
+      </div>
+
+      <div class="customizer-shell">
+        <!-- Live Visual & Summary Panel -->
+        <div class="customizer-preview">
+          <div>
+            <span class="eyebrow" id="custBaseTitle">Custom Groom Sherwani</span>
+            <h3 style="font-size: 1.8rem; color: var(--ivory); margin-top: 0.25rem;" id="custModelName">Classic Silk Blend</h3>
+          </div>
+
+          <div class="preview-stage">
+            <svg id="customizerSvg" viewBox="0 0 220 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="svgCollar" d="M85 32C85 24 96 20 110 20C124 20 135 24 135 32V46H85V32Z" stroke="#D4B77A" stroke-width="2" fill="#EFE9DF"/>
+              <path id="svgBodyL" d="M85 46L44 68L28 165L52 172L64 102L58 292H106V135L110 46H85Z" stroke="#D4B77A" stroke-width="1.8" fill="#FAF7F2"/>
+              <path id="svgBodyR" d="M135 46L176 68L192 165L168 172L156 102L162 292H114V135L110 46H135Z" stroke="#D4B77A" stroke-width="1.8" fill="#FAF7F2"/>
+              <path id="svgPlacket" d="M110 46V292" stroke="#B5924C" stroke-width="1.6"/>
+              <g id="svgButtons" fill="#B5924C">
+                <circle cx="110" cy="68" r="3"/><circle cx="110" cy="90" r="3"/><circle cx="110" cy="112" r="3"/><circle cx="110" cy="134" r="3"/><circle cx="110" cy="156" r="3"/>
+              </g>
+            </svg>
+
+            <div class="monogram-tag-preview">
+              <small>Complimentary Collar Lining Monogram</small>
+              <div class="monogram-letters" id="monogramLive">A · M</div>
+            </div>
+          </div>
+
+          <div class="preview-summary-box">
+            <div class="summary-line"><span>Fabric & Tier</span><strong id="sumFabric">Classic Silk Blend (₹3,500)</strong></div>
+            <div class="summary-line"><span>Collar / Neckline</span><strong id="sumCollar">Bandhgala Mandarin</strong></div>
+            <div class="summary-line"><span>Buttons & Fit</span><strong id="sumFit">Antique Brass · Tailored Slim</strong></div>
+            <div class="summary-line"><span>Bottom Pairing</span><strong id="sumBottom">Churidar Included</strong></div>
+            <div class="summary-line"><span>Monogramming & Alterations</span><strong style="color: var(--gold-light);">FREE</strong></div>
+            <div class="summary-total">
+              <span>Estimated Custom Price</span>
+              <span id="sumPrice">₹3,500</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step-by-Step Controls -->
+        <div class="customizer-controls">
+          <!-- Step 1: Fabric & Price Tier -->
+          <div>
+            <div class="cust-step-title">1. Select Fabric & Craftsmanship Tier <span>₹3,500 – ₹45,000</span></div>
+            <div class="swatch-row" id="fabricSwatches">
+              <button class="swatch-btn active" onclick="setFabric('Classic Ivory Cotton-Silk', 3500, '#FAF7F2', '#B5924C', this)">
+                <span class="swatch-dot" style="background:#FAF7F2;"></span> Ivory Cotton-Silk (₹3,500)
+              </button>
+              <button class="swatch-btn" onclick="setFabric('Midnight Jacquard Silk', 12500, '#1D2538', '#D4B77A', this)">
+                <span class="swatch-dot" style="background:#1D2538;"></span> Midnight Jacquard (₹12,500)
+              </button>
+              <button class="swatch-btn" onclick="setFabric('Emerald Italian Velvet', 22000, '#1B352B', '#D4B77A', this)">
+                <span class="swatch-dot" style="background:#1B352B;"></span> Emerald Velvet (₹22,000)
+              </button>
+              <button class="swatch-btn" onclick="setFabric('Nawab Raw Silk Zardozi', 32000, '#EFE4D2', '#8F6D32', this)">
+                <span class="swatch-dot" style="background:#EFE4D2;"></span> Raw Silk Zardozi (₹32,000)
+              </button>
+              <button class="swatch-btn" onclick="setFabric('Rajbari Bridal Hand-Zardozi', 45000, '#58191F', '#E2C68D', this)">
+                <span class="swatch-dot" style="background:#58191F;"></span> Royal Hand-Zardozi (₹45,000)
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Collar & Cut -->
+          <div>
+            <div class="cust-step-title">2. Collar & Silhouette Style <span>Included</span></div>
+            <div class="option-pills">
+              <button class="opt-pill active" onclick="selectPill(this, 'collar', 'Bandhgala Mandarin')">
+                <strong>Bandhgala Mandarin</strong>
+                <small>Classic high stand collar</small>
+              </button>
+              <button class="opt-pill" onclick="selectPill(this, 'collar', 'Asymmetric Achkan')">
+                <strong>Asymmetric Achkan</strong>
+                <small>Diagonal overlap front</small>
+              </button>
+              <button class="opt-pill" onclick="selectPill(this, 'collar', 'Open Indo-Western')">
+                <strong>Open Indo-Western</strong>
+                <small>Modern layered cut</small>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Buttons & Fit -->
+          <div>
+            <div class="cust-step-title">3. Buttons & Tailored Fit <span>Included</span></div>
+            <div class="option-pills">
+              <button class="opt-pill active" onclick="selectPill(this, 'fit', 'Antique Brass · Tailored Slim')">
+                <strong>Tailored Slim + Brass</strong>
+                <small>Sharp modern contour</small>
+              </button>
+              <button class="opt-pill" onclick="selectPill(this, 'fit', 'Pearl Studs · Classic Regal')">
+                <strong>Classic Regal + Pearl</strong>
+                <small>Comfortable ceremonial ease</small>
+              </button>
+              <button class="opt-pill" onclick="selectPill(this, 'fit', 'Concealed Placket · Relaxed')">
+                <strong>Relaxed + Concealed</strong>
+                <small>Minimalist hidden buttons</small>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 4: Bottom & Monogram -->
+          <div>
+            <div class="cust-step-title">4. Bottom Pairing & Free Monogramming <span>FREE</span></div>
+            <div class="monogram-inputs">
+              <div>
+                <select class="cust-select" id="bottomSelect" onchange="document.getElementById('sumBottom').textContent = this.value">
+                  <option>Churidar Included (+₹0)</option>
+                  <option>Straight Silk Trouser (+₹0)</option>
+                  <option>Jodhpuri Breeches (+₹1,200)</option>
+                  <option>Pleated Bengali Dhoti (+₹1,500)</option>
+                </select>
+              </div>
+              <div>
+                <input type="text" class="cust-input" maxlength="6" placeholder="Monogram Initials (e.g. A·M)" oninput="updateMonogram(this.value)" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5: Measurements -->
+          <div>
+            <div class="cust-step-title">5. Sizing & Measurements <span>Standard or Custom</span></div>
+            <select class="cust-select" id="sizeMode" onchange="toggleMeasureBox(this.value)">
+              <option value="custom">Enter Custom Measurements (Inches)</option>
+              <option value="standard">Select Standard Size (38 / 40 / 42 / 44) + Free Store Alteration</option>
+              <option value="tailor">Book Master Tailor Measurement at New Market Store</option>
+            </select>
+            <div class="measure-grid" id="measureInputs">
+              <div class="measure-box"><label>Chest (in)</label><input type="number" class="cust-input" value="40" /></div>
+              <div class="measure-box"><label>Shoulder (in)</label><input type="number" class="cust-input" value="18" /></div>
+              <div class="measure-box"><label>Waist (in)</label><input type="number" class="cust-input" value="34" /></div>
+              <div class="measure-box"><label>Length (in)</label><input type="number" class="cust-input" value="42" /></div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%; padding: 1.05rem;" onclick="submitCustomOrder()">
+            Save Custom Design & Request Fitting
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Heritage -->
+  <section class="section" id="heritage">
+    <div class="container heritage-grid">
+      <div class="heritage-frame">
+        <span class="eyebrow" style="margin-bottom: 0.9rem;">Since 1994 · New Market</span>
+        <p class="heritage-quote">“Whether your budget is ₹3,500 or ₹45,000, every groom walks out with a master-tailored fit.”</p>
+        <p style="color: rgba(250,247,242,0.75); font-size: 0.92rem; font-weight: 300;">
+          Unlike chain stores that push only fixed-size racks, Dress Circle brings 30+ years of Grant Street master tailoring—dressing the groom, father, and entire baraat under one roof.
+        </p>
+      </div>
+      <div>
+        <span class="eyebrow">The Dress Circle Advantage</span>
+        <h2 style="font-size: 2.6rem; margin: 0.5rem 0 1rem;">Complete Groom Styling Under One Roof</h2>
+        <div class="pillar-list">
+          <div class="pillar-item"><span class="pillar-num">01</span><div><h4>Transparent Price Tiers</h4><p>Quality sherwanis starting from ₹3,500 up to bridal-matched ₹45,000 hand-zardozi heirlooms.</p></div></div>
+          <div class="pillar-item"><span class="pillar-num">02</span><div><h4>Head-to-Toe Coordination</h4><p>Match your sherwani or vest jacket with hand-tied safas, embroidered mojaris, pearl malas, and kalgis.</p></div></div>
+          <div class="pillar-item"><span class="pillar-num">03</span><div><h4>Custom Tailoring & Free Alterations</h4><p>In-house karigars ensure sleeve, chest, and trouser lengths sit flawlessly before the wedding day.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit & Appointment -->
+  <section class="section" id="visit" style="background: var(--alabaster); border-top: 1px solid var(--sand);">
+    <div class="container">
+      <div class="visit-grid">
+        <div>
+          <span class="eyebrow">Private Groom Consultation</span>
+          <h2 style="font-size: 2.3rem; margin: 0.4rem 0 0.6rem;">Book Store Trial or Video Styling</h2>
+          <p style="color: var(--muted); font-size: 0.9rem;">Visit our flagship showroom near New Market or schedule a virtual consultation for custom orders.</p>
+          <form class="form-grid" onsubmit="handleBooking(event)">
+            <div class="form-group"><label>Full Name</label><input type="text" placeholder="e.g. Arnab Mukherjee" required /></div>
+            <div class="form-group"><label>WhatsApp / Phone</label><input type="tel" placeholder="+91 98300 XXXXX" required /></div>
+            <div class="form-group"><label>Wedding Month</label><input type="month" required /></div>
+            <div class="form-group"><label>Budget Range</label>
+              <select>
+                <option>₹3,500 – ₹12,000</option>
+                <option>₹12,000 – ₹25,000</option>
+                <option>₹25,000 – ₹45,000+</option>
+              </select>
+            </div>
+            <div class="form-group full"><button type="submit" class="btn btn-primary" style="width:100%;">Confirm Appointment Request</button></div>
+          </form>
+        </div>
+
+        <div class="store-card">
+          <div>
+            <span class="eyebrow">Flagship Showroom</span>
+            <h3 style="font-size: 1.85rem; margin: 0.4rem 0 1.2rem;">Dress Circle, New Market</h3>
+            <div class="store-detail-block"><h5>Address</h5><p>Grant Street, New Market Area,<br>Dharmatala, Kolkata – 700013</p></div>
+            <div class="store-detail-block"><h5>Timings</h5><p>Open All 7 Days: 11:00 AM – 8:30 PM</p></div>
+            <div class="store-detail-block"><h5>Contact</h5><p>+91 98300 00000 · styling@dresscirclekolkata.com</p></div>
+          </div>
+          <a href="https://maps.google.com/?q=Grant+Street+New+Market+Kolkata" target="_blank" class="btn btn-outline" style="width:100%;">Open Store Location in Maps ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Dress Circle</div>
+          <p style="font-size: 0.84rem; margin-top: 0.8rem; max-width: 300px;">Bespoke Sherwanis, Safas, Mojaris, Vest Jackets, Kurtas & Accessories in Kolkata since 1994.</p>
+        </div>
+        <div class="footer-col"><h5>Wardrobe</h5><ul><li><a href="#collection" onclick="filterProducts('sherwani')">Sherwanis (₹3.5k–₹45k)</a></li><li><a href="#collection" onclick="filterProducts('vest')">Vest Jackets</a></li><li><a href="#collection" onclick="filterProducts('kurta')">Kurtas</a></li></ul></div>
+        <div class="footer-col"><h5>Finishing Touches</h5><ul><li><a href="#collection" onclick="filterProducts('safa')">Safas & Turbans</a></li><li><a href="#collection" onclick="filterProducts('mojari')">Handcrafted Mojaris</a></li><li><a href="#collection" onclick="filterProducts('accessories')">Malas & Brooches</a></li></ul></div>
+        <div class="footer-col"><h5>Studio</h5><ul><li><a href="#customizer">Custom Studio</a></li><li><a href="#heritage">30-Year Legacy</a></li><li><a href="#visit">Grant St, New Market</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Dress Circle Kolkata. All Rights Reserved.</span>
+        <span>Website Concept Mockup · Customizer Preview</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="productModal" onclick="if(event.target===this) closeModal()">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-visual"><img id="modalImg" src="" alt="" /></div>
+      <div class="modal-body">
+        <span class="eyebrow" id="modalCat"></span>
+        <h3 id="modalTitle" style="font-size: 2rem; margin: 0.35rem 0;"></h3>
+        <p id="modalPrice" style="font-weight: 600; font-size: 1.15rem; color: var(--maroon);"></p>
+        <div class="modal-specs" id="modalSpecs"></div>
+        <p id="modalDesc" style="font-size: 0.86rem; color: var(--muted); margin-bottom: 1.5rem;"></p>
+        <div style="display: flex; gap: 0.7rem; flex-wrap: wrap;">
+          <button class="btn btn-gold" id="modalCustBtn" onclick="jumpToCustomizer()">Customize This Piece</button>
+          <button class="btn btn-primary" onclick="bookFromModal()">Book Store Trial</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const products = [
+      // Sherwanis (₹3,500 up to ₹45,000)
+      {
+        id: 1, category: 'sherwani', catLabel: 'Sherwani', customizable: true,
+        title: 'Classic Ivory Ceremonial Sherwani',
+        fabric: 'Cotton-Silk Blend · Minimalist Tonal Stitch',
+        price: 3500,
+        img: 'https://images.unsplash.com/photo-1628335179471-987edb152881?auto=format&fit=crop&w=900&q=80',
+        desc: 'Our signature entry-level tailored sherwani—clean lines, breathable cotton-silk fabric, and antique brass buttons ideal for engagements and family ceremonies.',
+        specs: ['Price: ₹3,500 (Entry Bespoke)', 'Fabric: Breathable Cotton-Silk', 'Includes: Matching Churidar', 'Customization: Fit, Buttons & Free Monogram']
+      },
+      {
+        id: 2, category: 'sherwani', catLabel: 'Sherwani', customizable: true,
+        title: 'Midnight Jacquard Achkan Sherwani',
+        fabric: 'Woven Silk Jacquard · Textured Self-Motif',
+        price: 14500,
+        img: 'https://images.unsplash.com/photo-1781106699853-db5cad3a5dbd?auto=format&fit=crop&w=900&q=80',
+        desc: 'Rich deep-toned jacquard sherwani featuring subtle geometric weave patterns and sculpted shoulders for evening Sangeet and Baraat entries.',
+        specs: ['Price: ₹14,500', 'Fabric: Woven Silk Jacquard', 'Includes: Churidar & Pocket Square', 'Customization: Collar, Fit & Free Monogram']
+      },
+      {
+        id: 3, category: 'sherwani', catLabel: 'Sherwani', customizable: true,
+        title: 'Nawab Cream & Gold Sherwani',
+        fabric: 'Pure Mulberry Raw Silk · Resham & Pearl Work',
+        price: 28500,
+        img: 'https://images.unsplash.com/photo-1781106784087-d6f4432ad721?auto=format&fit=crop&w=900&q=80',
+        desc: 'Timeless cream raw silk sherwani accented with delicate metallic embroidery along the collar and placket for classic Kolkata day or night weddings.',
+        specs: ['Price: ₹28,500', 'Fabric: 100% Mulberry Raw Silk', 'Includes: Silk Pants & Organza Stole', 'Customization: Full Master Tailoring']
+      },
+      {
+        id: 4, category: 'sherwani', catLabel: 'Sherwani', customizable: true,
+        title: 'Rajbari Royal Crimson-Shawl Sherwani',
+        fabric: 'Hand-Embroidered Zardozi · Bridal-Matched Shawl',
+        price: 45000,
+        img: 'https://images.unsplash.com/photo-1757598079169-b8655dc3e933?auto=format&fit=crop&w=900&q=80',
+        desc: 'Our pinnacle ₹45,000 heirloom groom couture—intricate hand zardozi work paired with a richly bordered crimson velvet/silk wedding shawl.',
+        specs: ['Price: ₹45,000 (Couture Heirloom)', 'Craft: 120-Hour Hand Zardozi & Dabka', 'Includes: Embroidered Stole & Churidar', 'Customization: Bridal Shade Matching + Monogram']
+      },
+
+      // Vest Jackets
+      {
+        id: 5, category: 'vest', catLabel: 'Vest Jacket', customizable: true,
+        title: 'Lavender Silk Embellished Bundi',
+        fabric: 'Tussar Silk Blend · Tonal Thread Embroidery',
+        price: 4800,
+        img: 'https://images.unsplash.com/photo-1774267230662-575d1f4ec1bd?auto=format&fit=crop&w=900&q=80',
+        desc: 'Refined Nehru vest jacket crafted for Mehendi, Haldi, and cocktail evenings—layers effortlessly over crisp kurtas or formal shirts.',
+        specs: ['Price: ₹4,800', 'Fabric: Tussar Raw Silk', 'Buttons: Antique Metal Crest', 'Customization: Custom Chest & Length']
+      },
+      {
+        id: 6, category: 'vest', catLabel: 'Vest Jacket', customizable: true,
+        title: 'Heritage Textured Nehru Waistcoat',
+        fabric: 'Handloom Jacquard · Structured Mandarin Collar',
+        price: 6500,
+        img: 'https://images.unsplash.com/photo-1785651523655-2dd393e88ff3?auto=format&fit=crop&w=900&q=80',
+        desc: 'Sharp tailored waistcoat designed for groomsmen squads and reception hosts, featuring double-welted pockets and satin lining.',
+        specs: ['Price: ₹6,500', 'Fabric: Handloom Brocade Jacquard', 'Lining: Breathable Viscose Satin', 'Customization: Monogram & Fit Options']
+      },
+
+      // Kurtas
+      {
+        id: 7, category: 'kurta', catLabel: 'Kurta', customizable: true,
+        title: 'Shantiniketan Marigold Haldi Kurta',
+        fabric: 'Chanderi Cotton-Silk · Block Motif',
+        price: 2200,
+        img: 'https://images.unsplash.com/photo-1774437677147-c4aff61aaab6?auto=format&fit=crop&w=900&q=80',
+        desc: 'Vibrant sunlit kurta crafted in airy cotton-silk for joyous Haldi mornings and daytime pujas.',
+        specs: ['Price: ₹2,200', 'Fabric: Handloom Chanderi', 'Includes: Matching White Pajama', 'Customization: Sleeve & Kurta Length']
+      },
+      {
+        id: 8, category: 'kurta', catLabel: 'Kurta', customizable: true,
+        title: 'Dharmatala Ivory Pleated Kurta Set',
+        fabric: 'Pure Mulmul-Silk · Mother of Pearl Buttons',
+        price: 3800,
+        img: 'https://images.unsplash.com/photo-1781106785213-ee999c3edf50?auto=format&fit=crop&w=900&q=80',
+        desc: 'Understated ivory ceremonial kurta with tailored cuffs and relaxed drape—ideal under vest jackets or worn solo.',
+        specs: ['Price: ₹3,800', 'Fabric: Mercerized Mul-Silk', 'Includes: Aligarhi Pajama', 'Customization: Collar & Monogram']
+      },
+
+      // Safas
+      {
+        id: 9, category: 'safa', catLabel: 'Safa & Turban', customizable: false,
+        title: 'Royal Hand-Tied Baraat Safa',
+        fabric: 'Chanderi Tissue & Zari Border · Custom Head Size',
+        price: 2400,
+        img: 'https://images.unsplash.com/photo-1755931450169-513db8303ccf?auto=format&fit=crop&w=900&q=80',
+        desc: 'Pre-pleated or custom-tied royal wedding safa crafted in lightweight zari-bordered silk for all-day comfort during the baraat.',
+        specs: ['Price: ₹2,400', 'Fabric: Banarasi Tissue & Kota', 'Sizing: Custom Head Circumference', 'Add-on: Matching Groom Squad Safas Available']
+      },
+      {
+        id: 10, category: 'safa', catLabel: 'Safa & Turban', customizable: false,
+        title: 'Saffron Festive Bandhej Pagri',
+        fabric: 'Pure Georgette Bandhani · Traditional Tie',
+        price: 1650,
+        img: 'https://images.unsplash.com/photo-1774438357726-948799526851?auto=format&fit=crop&w=900&q=80',
+        desc: 'Vibrant saffron celebratory pagri suitable for groomsmen, fathers, and morning wedding processions.',
+        specs: ['Price: ₹1,650', 'Fabric: Hand-Dyed Bandhej', 'Comfort: Breathable Cotton Inner Band', 'Ready to Wear or Unstitched']
+      },
+
+      // Mojaris
+      {
+        id: 11, category: 'mojari', catLabel: 'Mojari', customizable: false,
+        title: 'Ivory & Gold Zari Groom Mojari',
+        fabric: 'Soft Cushioned Leather · Hand-Embroidered Upper',
+        price: 2450,
+        img: 'https://images.unsplash.com/photo-1757598076944-530a7bb81d79?auto=format&fit=crop&w=900&q=80',
+        desc: 'Cushioned artisanal mojari embroidered in antique gold and ivory thread—engineered for zero shoe-bites across 10-hour wedding rituals.',
+        specs: ['Price: ₹2,450', 'Sole: Anti-Slip Cushioned Leather', 'Sizes: UK 6 to UK 12', 'Pairs With: Ivory & Gold Sherwanis']
+      },
+      {
+        id: 12, category: 'mojari', catLabel: 'Mojari', customizable: false,
+        title: 'Crimson Velvet Zardozi Jutti',
+        fabric: 'Velvet Upper · Gold Sequins & Dabka',
+        price: 2950,
+        img: 'https://images.unsplash.com/photo-1777980653176-849502631cf6?auto=format&fit=crop&w=900&q=80',
+        desc: 'Statement crimson velvet mojari detailed with gold sequins to complement maroon stoles and heritage sherwanis.',
+        specs: ['Price: ₹2,950', 'Insole: Double Memory Foam Padding', 'Sizes: UK 6 to UK 12', 'Handcrafted in India']
+      },
+
+      // Accessories
+      {
+        id: 13, category: 'accessories', catLabel: 'Accessories', customizable: false,
+        title: 'Three-Tier Pearl & Emerald Mala',
+        fabric: 'Hand-Strung Freshwater Pearls & Emerald Beads',
+        price: 1850,
+        img: 'https://images.unsplash.com/photo-1783188223567-e98c411c57cd?auto=format&fit=crop&w=900&q=80',
+        desc: 'Classic multi-layered kantha mala with deep emerald accent beads and adjustable silk tassel tie.',
+        specs: ['Price: ₹1,850', 'Finish: Antique Kundan Clasp', 'Style: Layered Sherwani Kantha', 'Includes: Velvet Keepsake Box']
+      },
+      {
+        id: 14, category: 'accessories', catLabel: 'Accessories', customizable: false,
+        title: 'Antique Kundan Kalgi & Brooch Set',
+        fabric: 'Gold-Plated Brass · Hand-Set Stones',
+        price: 1400,
+        img: 'https://images.unsplash.com/photo-1650873442159-65dda3860134?auto=format&fit=crop&w=900&q=80',
+        desc: 'Regal turban kalgi and matching chest brooch set crafted to elevate minimalist sherwanis and bandhgalas.',
+        specs: ['Price: ₹1,400', 'Includes: 1 Safa Kalgi + 1 Lapel Brooch', 'Plating: Matte Antique Gold', 'Pin: Secure Double-Lock Back']
+      }
+    ];
+
+    let activeCategory = 'all';
+    let activeSort = 'featured';
+    let currentModalProduct = null;
+
+    function formatINR(num) {
+      return '₹' + num.toLocaleString('en-IN');
+    }
+
+    function renderCatalogue() {
+      let list = activeCategory === 'all' ? [...products] : products.filter(p => p.category === activeCategory);
+
+      if (activeSort === 'price-asc') list.sort((a, b) => a.price - b.price);
+      if (activeSort === 'price-desc') list.sort((a, b) => b.price - a.price);
+
+      document.getElementById('resultsCount').textContent = `Showing ${list.length} creation${list.length !== 1 ? 's' : ''}`;
+
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = list.map(p => `
+        <div class="product-card">
+          <div class="product-visual">
+            <span class="badge-tag">${p.catLabel}</span>
+            ${p.customizable ? '<span class="badge-customizable">Customizable</span>' : ''}
+            <img src="${p.img}" alt="${p.title}" loading="lazy"
+              onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 375%22><rect width=%22300%22 height=%22375%22 fill=%22%23E8E0D2%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%234A181C%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2216%22>${encodeURIComponent(p.catLabel)}</text></svg>'"
+            />
+            <div class="quick-view-overlay">
+              <button class="btn btn-primary" style="flex:1; padding:0.7rem;" onclick="openModal(${p.id})">Quick View</button>
+              ${p.customizable ? `<button class="btn btn-gold" style="padding:0.7rem 0.9rem;" onclick="loadIntoCustomizer(${p.id})">Customize</button>` : ''}
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <span class="product-cat">${p.catLabel}</span>
+              <h3 class="product-title">${p.title}</h3>
+              <p class="product-fabric">${p.fabric}</p>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price">${formatINR(p.price)}</span>
+              <button class="product-action-link" onclick="openModal(${p.id})">Details →</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterProducts(cat, btnEl) {
+      activeCategory = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('active');
+        if (!btnEl && b.getAttribute('onclick').includes(`'${cat}'`)) b.classList.add('active');
+      });
+      if (btnEl) btnEl.classList.add('active');
+      renderCatalogue();
+    }
+
+    function applySort() {
+      activeSort = document.getElementById('priceSort').value;
+      renderCatalogue();
+    }
+
+    // Modal Logic
+    function openModal(id) {
+      const p = products.find(x => x.id === id);
+      if (!p) return;
+      currentModalProduct = p;
+      document.getElementById('modalImg').src = p.img;
+      document.getElementById('modalCat').textContent = p.catLabel;
+      document.getElementById('modalTitle').textContent = p.title;
+      document.getElementById('modalPrice').textContent = formatINR(p.price);
+      document.getElementById('modalDesc').textContent = p.desc;
+      document.getElementById('modalSpecs').innerHTML = p.specs.map(s => `<div>• ${s}</div>`).join('');
+      document.getElementById('modalCustBtn').style.display = p.customizable ? 'inline-flex' : 'none';
+      document.getElementById('productModal').classList.add('open');
+    }
+    function closeModal() { document.getElementById('productModal').classList.remove('open'); }
+    function bookFromModal() {
+      closeModal();
+      document.getElementById('visit').scrollIntoView({ behavior: 'smooth' });
+      showToast(`Selected "${currentModalProduct.title}" (${formatINR(currentModalProduct.price)}) for store trial.`);
+    }
+    function jumpToCustomizer() {
+      closeModal();
+      loadIntoCustomizer(currentModalProduct.id);
+    }
+
+    // Pant-Project Style Customizer Logic
+    let customState = {
+      basePrice: 3500,
+      bottomAddon: 0,
+      fabricName: 'Classic Ivory Cotton-Silk'
+    };
+
+    function setFabric(name, price, fillColor, strokeColor, btn) {
+      document.querySelectorAll('#fabricSwatches .swatch-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      customState.basePrice = price;
+      customState.fabricName = name;
+
+      document.getElementById('custModelName').textContent = name;
+      document.getElementById('sumFabric').textContent = `${name} (${formatINR(price)})`;
+      document.getElementById('svgCollar').setAttribute('fill', fillColor);
+      document.getElementById('svgBodyL').setAttribute('fill', fillColor);
+      document.getElementById('svgBodyR').setAttribute('fill', fillColor);
+      document.getElementById('svgCollar').setAttribute('stroke', strokeColor);
+      document.getElementById('svgBodyL').setAttribute('stroke', strokeColor);
+      document.getElementById('svgBodyR').setAttribute('stroke', strokeColor);
+      document.getElementById('svgPlacket').setAttribute('stroke', strokeColor);
+      document.getElementById('svgButtons').setAttribute('fill', strokeColor);
+      updateCustomPrice();
+    }
+
+    function loadIntoCustomizer(id) {
+      const p = products.find(x => x.id === id);
+      if (!p) return;
+      document.getElementById('custBaseTitle').textContent = `Customizing: ${p.catLabel}`;
+      setFabric(p.title, p.price, '#FAF7F2', '#B5924C', null);
+      document.getElementById('customizer').scrollIntoView({ behavior: 'smooth' });
+      showToast(`Loaded "${p.title}" into Custom Studio.`);
+    }
+
+    function selectPill(el, group, value) {
+      el.parentElement.querySelectorAll('.opt-pill').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      if (group === 'collar') document.getElementById('sumCollar').textContent = value;
+      if (group === 'fit') document.getElementById('sumFit').textContent = value;
+    }
+
+    document.getElementById('bottomSelect').addEventListener('change', function() {
+      const text = this.value;
+      customState.bottomAddon = text.includes('1,200') ? 1200 : text.includes('1,500') ? 1500 : 0;
+      document.getElementById('sumBottom').textContent = text;
+      updateCustomPrice();
+    });
+
+    function updateCustomPrice() {
+      const total = customState.basePrice + customState.bottomAddon;
+      document.getElementById('sumPrice').textContent = formatINR(total);
+    }
+
+    function updateMonogram(val) {
+      const clean = val.trim().toUpperCase();
+      document.getElementById('monogramLive').textContent = clean ? clean.split('').join(' · ') : 'A · M';
+    }
+
+    function toggleMeasureBox(val) {
+      document.getElementById('measureInputs').style.display = val === 'custom' ? 'grid' : 'none';
+    }
+
+    function submitCustomOrder() {
+      const total = document.getElementById('sumPrice').textContent;
+      const mono = document.getElementById('monogramLive').textContent;
+      showToast(`Custom Design Saved! ${customState.fabricName} | Monogram: "${mono}" | Est: ${total}`);
+    }
+
+    function handleBooking(e) {
+      e.preventDefault();
+      showToast('Appointment request received! Our Grant St styling desk will confirm shortly.');
+      e.target.reset();
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 4500);
+    }
+
+    // Init
+    renderCatalogue();
+  </script>
+</body>
+</html>
